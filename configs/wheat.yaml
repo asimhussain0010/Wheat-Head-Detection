@@ -1,0 +1,10 @@
+
+# train and val datasets
+train: /content/drive/MyDrive/5/dataset/images/train
+val: /content/drive/MyDrive/5/dataset/images/val
+
+# number of classes
+nc: 1
+
+# class names
+names: ['wheat']

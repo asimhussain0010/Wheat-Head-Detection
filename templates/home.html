@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}Wheat Head Detection — Home{% endblock %}
+{% block content %}
+
+<section class="hero">
+  <div class="hero-decor" aria-hidden="true">
+    <svg class="stalk-l" viewBox="0 0 100 160" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M50 155V40"/>
+      <path d="M50 50 30 30M50 50 70 30M50 65 25 48M50 65 75 48M50 80 22 65M50 80 78 65M50 95 25 82M50 95 75 82M50 110 28 98M50 110 72 98"/>
+      <circle cx="30" cy="30" r="4"/><circle cx="70" cy="30" r="4"/>
+      <circle cx="25" cy="48" r="4"/><circle cx="75" cy="48" r="4"/>
+      <circle cx="22" cy="65" r="4"/><circle cx="78" cy="65" r="4"/>
+      <circle cx="25" cy="82" r="4"/><circle cx="75" cy="82" r="4"/>
+      <circle cx="28" cy="98" r="4"/><circle cx="72" cy="98" r="4"/>
+    </svg>
+    <svg class="stalk-r" viewBox="0 0 100 160" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M50 155V40"/>
+      <path d="M50 50 30 30M50 50 70 30M50 65 25 48M50 65 75 48M50 80 22 65M50 80 78 65M50 95 25 82M50 95 75 82M50 110 28 98M50 110 72 98"/>
+      <circle cx="30" cy="30" r="4"/><circle cx="70" cy="30" r="4"/>
+      <circle cx="25" cy="48" r="4"/><circle cx="75" cy="48" r="4"/>
+      <circle cx="22" cy="65" r="4"/><circle cx="78" cy="65" r="4"/>
+      <circle cx="25" cy="82" r="4"/><circle cx="75" cy="82" r="4"/>
+      <circle cx="28" cy="98" r="4"/><circle cx="72" cy="98" r="4"/>
+    </svg>
+  </div>
+  <div class="container hero-inner">
+    <span class="eyebrow" data-reveal><span class="dot"></span><span data-i18n="hero.eyebrow">YOLOv5 · Separable Convolutions</span></span>
+    <h1 data-reveal>
+      <span data-i18n="hero.title1">Detect wheat heads with</span>
+      <span class="grad" data-i18n="hero.title2">precision, in real time</span>
+    </h1>
+    <p data-reveal data-i18n="hero.desc">A YOLOv5-based deep learning model integrating separable convolutions to accurately localize and count wheat heads from field images — built for agronomists, researchers, and breeders.</p>
+    <div class="hero-cta" data-reveal>
+      <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg" data-i18n="hero.cta_primary">Try the Detector</a>
+      <a href="{{ url_for('notebook') }}" class="btn btn-outline btn-lg" data-i18n="hero.cta_secondary">View Notebook</a>
+    </div>
+
+    <div class="stat-row" data-reveal>
+      <div class="stat"><b data-i18n="stat.1_value">10K+</b><span data-i18n="stat.1_label">Training images</span></div>
+      <div class="stat"><b data-i18n="stat.2_value">0.5s</b><span data-i18n="stat.2_label">Avg. inference</span></div>
+      <div class="stat"><b data-i18n="stat.3_value">95%</b><span data-i18n="stat.3_label">mAP accuracy</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow" style="margin-bottom:14px"><span class="dot"></span><span data-i18n="features.eyebrow">Why this model</span></span>
+      <h2 data-i18n="features.title">Built for real field conditions</h2>
+      <p data-i18n="features.desc">Trained on diverse, occluded, and densely-packed wheat head imagery for robust, real-world performance.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card" data-reveal>
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+        <h3 data-i18n="feature.1.title">Separable Convolutions</h3>
+        <p data-i18n="feature.1.desc">Lightweight depthwise-separable layers cut compute cost while preserving detection accuracy.</p>
+      </div>
+      <div class="card" data-reveal>
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg></div>
+        <h3 data-i18n="feature.2.title">Real-time Inference</h3>
+        <p data-i18n="feature.2.desc">Optimized YOLOv5 backbone delivers fast, on-demand predictions on a single image or live feed.</p>
+      </div>
+      <div class="card" data-reveal>
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
+        <h3 data-i18n="feature.3.title">Dense Head Counting</h3>
+        <p data-i18n="feature.3.desc">Handles overlapping and occluded wheat heads for reliable yield estimation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="card" data-reveal style="text-align:center; padding:52px 32px; background:linear-gradient(135deg, var(--surface), var(--surface-2));">
+      <h2 style="margin:0 0 10px" data-i18n="cta.title">Ready to see it in action?</h2>
+      <p style="margin:0 0 22px; color:var(--text-secondary)" data-i18n="cta.desc">Upload a field image and get instant wheat head detections with bounding boxes.</p>
+      <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg" data-i18n="cta.button">Open Detector</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

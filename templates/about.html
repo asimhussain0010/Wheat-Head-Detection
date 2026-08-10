@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Wheat Head Detection — About{% endblock %}
+{% block content %}
+
+<section class="section" style="padding-top:64px">
+  <div class="container">
+    <div class="section-head" data-reveal style="max-width:720px">
+      <span class="eyebrow" style="margin-bottom:14px"><span class="dot"></span><span data-i18n="about.eyebrow">About the project</span></span>
+      <h2 data-i18n="about.title">Wheat Head Detection, explained</h2>
+      <p data-i18n="about.desc">This project applies a YOLOv5 object detector — enhanced with separable convolutions — to identify and count wheat heads in field photography, supporting yield estimation and crop research workflows.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card" data-reveal>
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17V7l8-4 8 4v10l-8 4-8-4z"/><path d="M4 7l8 4 8-4M12 11v10"/></svg></div>
+        <h3 data-i18n="about.stack_title">Technology stack</h3>
+        <p data-i18n="about.stack_desc">PyTorch, YOLOv5, OpenCV, and Flask power the model training pipeline and this web interface.</p>
+      </div>
+      <div class="card" data-reveal>
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M10 4v16"/></svg></div>
+        <h3 data-i18n="about.data_title">Dataset</h3>
+        <p data-i18n="about.data_desc">Trained on thousands of annotated field images captured under varied lighting, density, and occlusion conditions.</p>
+      </div>
+      <div class="card" data-reveal>
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg></div>
+        <h3 data-i18n="about.goal_title">Goal</h3>
+        <p data-i18n="about.goal_desc">Give researchers and farmers a fast, accessible way to estimate wheat head counts from a single photo.</p>
+      </div>
+    </div>
+
+    <div class="card" data-reveal style="margin-top:20px; padding:34px;">
+      <h3 style="margin-top:0">Pipeline overview</h3>
+      <div class="grid grid-2" style="margin-top:18px">
+        <div>
+          <p style="color:var(--text-secondary); font-size:.92rem; line-height:1.7; margin:0">
+            Field images are annotated with bounding boxes and fed into a YOLOv5 backbone modified with
+            depthwise-separable convolutions to reduce parameter count. Training uses standard augmentation
+            (mosaic, flip, HSV jitter) with an SGD optimizer.
+          </p>
+        </div>
+        <div>
+          <p style="color:var(--text-secondary); font-size:.92rem; line-height:1.7; margin:0">
+            At inference, an uploaded image is resized, passed through the network, and non-max suppression
+            filters overlapping boxes. The rendered result overlays a bounding box on every detected wheat head.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

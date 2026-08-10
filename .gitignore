@@ -1,0 +1,66 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Environment / Secrets
+.env
+.env.*
+
+# Python Tools
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Machine Learning Model Files
+*.pt
+*.pth
+*.onnx
+*.engine
+*.weights
+
+# Large Dataset Files
+dataset/image/
+dataset/images/
+dataset/labels/
+
+# Generated ML Results
+runs/
+results/
+predictions/
+outputs/
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Archives
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
+
+# Logs
+*.log
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary Files
+*.tmp
+*.temp
