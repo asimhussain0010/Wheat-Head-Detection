@@ -3,24 +3,37 @@
 {% block content %}
 
 <section class="hero">
+  <!-- Decorative wheat and scanning accents sit behind the hero content. -->
   <div class="hero-decor" aria-hidden="true">
+
     <svg class="stalk-l" viewBox="0 0 100 160" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-      <path d="M50 155V40"/>
-      <path d="M50 50 30 30M50 50 70 30M50 65 25 48M50 65 75 48M50 80 22 65M50 80 78 65M50 95 25 82M50 95 75 82M50 110 28 98M50 110 72 98"/>
-      <circle cx="30" cy="30" r="4"/><circle cx="70" cy="30" r="4"/>
-      <circle cx="25" cy="48" r="4"/><circle cx="75" cy="48" r="4"/>
-      <circle cx="22" cy="65" r="4"/><circle cx="78" cy="65" r="4"/>
-      <circle cx="25" cy="82" r="4"/><circle cx="75" cy="82" r="4"/>
-      <circle cx="28" cy="98" r="4"/><circle cx="72" cy="98" r="4"/>
+      <path d="M50 155V40"></path>
+      <path d="M50 50 30 30M50 50 70 30M50 65 25 48M50 65 75 48M50 80 22 65M50 80 78 65M50 95 25 82M50 95 75 82M50 110 28 98M50 110 72 98"></path>
+      <circle cx="30" cy="30" r="4"></circle><circle cx="70" cy="30" r="4"></circle>
+      <circle cx="25" cy="48" r="4"></circle><circle cx="75" cy="48" r="4"></circle>
+      <circle cx="22" cy="65" r="4"></circle><circle cx="78" cy="65" r="4"></circle>
+      <circle cx="25" cy="82" r="4"></circle><circle cx="75" cy="82" r="4"></circle>
+      <circle cx="28" cy="98" r="4"></circle><circle cx="72" cy="98" r="4"></circle>
     </svg>
+
     <svg class="stalk-r" viewBox="0 0 100 160" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-      <path d="M50 155V40"/>
-      <path d="M50 50 30 30M50 50 70 30M50 65 25 48M50 65 75 48M50 80 22 65M50 80 78 65M50 95 25 82M50 95 75 82M50 110 28 98M50 110 72 98"/>
-      <circle cx="30" cy="30" r="4"/><circle cx="70" cy="30" r="4"/>
-      <circle cx="25" cy="48" r="4"/><circle cx="75" cy="48" r="4"/>
-      <circle cx="22" cy="65" r="4"/><circle cx="78" cy="65" r="4"/>
-      <circle cx="25" cy="82" r="4"/><circle cx="75" cy="82" r="4"/>
-      <circle cx="28" cy="98" r="4"/><circle cx="72" cy="98" r="4"/>
+      <path d="M50 155V40"></path>
+      <path d="M50 50 30 30M50 50 70 30M50 65 25 48M50 65 75 48M50 80 22 65M50 80 78 65M50 95 25 82M50 95 75 82M50 110 28 98M50 110 72 98"></path>
+      <circle cx="30" cy="30" r="4"></circle><circle cx="70" cy="30" r="4"></circle>
+      <circle cx="25" cy="48" r="4"></circle><circle cx="75" cy="48" r="4"></circle>
+      <circle cx="22" cy="65" r="4"></circle><circle cx="78" cy="65" r="4"></circle>
+      <circle cx="25" cy="82" r="4"></circle><circle cx="75" cy="82" r="4"></circle>
+      <circle cx="28" cy="98" r="4"></circle><circle cx="72" cy="98" r="4"></circle>
+    </svg>
+
+    <svg class="scan-box box-1" viewBox="0 0 120 120" fill="none">
+      <path d="M6 26V6h20M114 26V6H94M6 94v20h20M114 94v20H94" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    </svg>
+    <svg class="scan-box box-2" viewBox="0 0 120 120" fill="none">
+      <path d="M6 26V6h20M114 26V6H94M6 94v20h20M114 94v20H94" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    </svg>
+    <svg class="scan-box box-3" viewBox="0 0 120 120" fill="none">
+      <path d="M6 26V6h20M114 26V6H94M6 94v20h20M114 94v20H94" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
     </svg>
   </div>
   <div class="container hero-inner">
@@ -32,13 +45,78 @@
     <p data-reveal data-i18n="hero.desc">A YOLOv5-based deep learning model integrating separable convolutions to accurately localize and count wheat heads from field images — built for agronomists, researchers, and breeders.</p>
     <div class="hero-cta" data-reveal>
       <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg" data-i18n="hero.cta_primary">Try the Detector</a>
-      <a href="{{ url_for('notebook') }}" class="btn btn-outline btn-lg" data-i18n="hero.cta_secondary">View Notebook</a>
+      <a href="{{ url_for('notebook') }}" class="btn btn-outline btn-lg" target="_blank" rel="noopener" data-i18n="hero.cta_secondary">View Notebook</a>
     </div>
 
     <div class="stat-row" data-reveal>
       <div class="stat"><b data-i18n="stat.1_value">10K+</b><span data-i18n="stat.1_label">Training images</span></div>
       <div class="stat"><b data-i18n="stat.2_value">0.5s</b><span data-i18n="stat.2_label">Avg. inference</span></div>
       <div class="stat"><b data-i18n="stat.3_value">95%</b><span data-i18n="stat.3_label">mAP accuracy</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:56px">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow" style="margin-bottom:14px"><span class="dot"></span><span data-i18n="showcase.eyebrow">From the field</span></span>
+      <h2 data-i18n="showcase.title">Real crop imagery, real detections</h2>
+      <p data-i18n="showcase.desc">A look at the kind of field photography this model is trained and tested on.</p>
+    </div>
+
+   <div class="showcase" data-reveal>
+      <div class="showcase-chrome">
+        <span></span><span></span><span></span>
+        <div class="showcase-chrome-bar"><div class="showcase-chrome-dot"></div><span data-i18n="showcase.chrome_label">Field-Samples.jpg — Live Preview</span></div>
+      </div>
+      <div class="showcase-frame" id="showcaseFrame">
+        <div class="showcase-slide active">
+          <img src="{{ url_for('static', filename='img/showcase/wheat-01.png') }}" alt="Dense wheat head cluster">
+          <div class="showcase-caption">
+            <span data-i18n="showcase.cap1">Real-world crop conditions — from vibrant green fields to mature golden wheat</span>
+          </div>
+        </div>
+        <div class="showcase-slide">
+          <img src="{{ url_for('static', filename='img/showcase/wheat-02.png') }}" alt="Wheat field under natural light" loading="lazy">
+          <div class="showcase-caption">
+            <span data-i18n="showcase.cap2">Dense and overlapping wheat heads — the challenging cases where precise detection matters most</span>
+          </div>
+        </div>
+        <div class="showcase-slide">
+          <img src="{{ url_for('static', filename='img/showcase/wheat-03.jpg') }}" alt="Close-up wheat head texture" loading="lazy">
+          <div class="showcase-caption">
+            <span data-i18n="showcase.cap3">Natural light, shadows, and field variation — built around conditions beyond controlled environments</span>
+          </div>
+        </div>
+        <div class="showcase-slide">
+          <img src="{{ url_for('static', filename='img/showcase/wheat-04.png') }}" alt="Wheat heads at harvest stage" loading="lazy">
+          <div class="showcase-caption">
+            <span data-i18n="showcase.cap4">Close-up grain detail meets expansive farmland — supporting detection across different visual scales</span>
+          </div>
+        </div>
+
+        <div class="showcase-slide">
+          <img src="{{ url_for('static', filename='img/showcase/wheat-05.jpg') }}" alt="Healthy wheat fields captured during the late growing season" loading="lazy">
+          <div class="showcase-caption">
+            <span data-i18n="showcase.cap5">From growing crops to harvest-ready fields — capturing the changing appearance of wheat throughout the season</span>
+          </div>
+        </div>
+
+        <button type="button" class="showcase-arrow prev" id="showcasePrev" aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button type="button" class="showcase-arrow next" id="showcaseNext" aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+      <div class="showcase-progress" id="showcaseDots">
+        <button type="button" class="active" data-slide="0" aria-label="Slide 1"><i></i></button>
+        <button type="button" data-slide="1" aria-label="Slide 2"><i></i></button>
+        <button type="button" data-slide="2" aria-label="Slide 3"><i></i></button>
+        <button type="button" data-slide="3" aria-label="Slide 4"><i></i></button>
+        <button type="button" data-slide="4" aria-label="Slide 5"><i></i></button>
+
+      </div>
     </div>
   </div>
 </section>
@@ -81,4 +159,123 @@
   </div>
 </section>
 
+{% endblock %}
+
+{% block extra_js %}
+<script>
+(function () {
+  // Keep the showcase self-contained so it does not affect the rest of the page.
+  var frame = document.getElementById('showcaseFrame');
+  if (!frame) return;
+
+  var slides = frame.querySelectorAll('.showcase-slide');
+  var segs = document.querySelectorAll('#showcaseDots button');
+  var prevBtn = document.getElementById('showcasePrev');
+  var nextBtn = document.getElementById('showcaseNext');
+  var currentIndex = 0;
+  var timer = null;
+  var DURATION = 4500;
+
+  if (!slides.length || !segs.length || !prevBtn || !nextBtn) return;
+
+  function resetSegments() {
+    segs.forEach(function (segment) {
+      var bar = segment.querySelector('i');
+
+      segment.classList.remove('active', 'done');
+
+      if (bar) {
+        bar.style.transitionDuration = '0s';
+        bar.style.width = '0%';
+      }
+    });
+  }
+
+  function paintSegments() {
+    segs.forEach(function (segment, index) {
+      var bar = segment.querySelector('i');
+      if (!bar) return;
+
+      bar.style.transitionDuration = '0s';
+
+      if (index < currentIndex) {
+        segment.classList.add('done');
+        segment.classList.remove('active');
+        bar.style.width = '100%';
+      } else if (index === currentIndex) {
+        segment.classList.add('active');
+        segment.classList.remove('done');
+        bar.style.width = '0%';
+
+        // Two frames give the browser time to apply 0% before starting the fill animation.
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            bar.style.transitionDuration = DURATION + 'ms';
+            bar.style.width = '100%';
+          });
+        });
+      } else {
+        segment.classList.remove('active', 'done');
+        bar.style.width = '0%';
+      }
+    });
+  }
+
+  function showSlide(index) {
+    slides[currentIndex].classList.remove('active');
+    currentIndex = (index + slides.length) % slides.length;
+    slides[currentIndex].classList.add('active');
+    paintSegments();
+  }
+
+  function nextSlide() {
+    showSlide(currentIndex + 1);
+  }
+
+  function previousSlide() {
+    showSlide(currentIndex - 1);
+  }
+
+  function restartAutoPlay() {
+    window.clearInterval(timer);
+    paintSegments();
+    timer = window.setInterval(nextSlide, DURATION);
+  }
+
+  function pauseAutoPlay() {
+    window.clearInterval(timer);
+    timer = null;
+  }
+
+  nextBtn.addEventListener('click', function () {
+    nextSlide();
+    restartAutoPlay();
+  });
+
+  prevBtn.addEventListener('click', function () {
+    previousSlide();
+    restartAutoPlay();
+  });
+
+  segs.forEach(function (segment, index) {
+    segment.addEventListener('click', function () {
+      showSlide(index);
+      restartAutoPlay();
+    });
+  });
+
+  frame.addEventListener('mouseenter', pauseAutoPlay);
+  frame.addEventListener('mouseleave', restartAutoPlay);
+  frame.addEventListener('focusin', pauseAutoPlay);
+  frame.addEventListener('focusout', function (event) {
+    if (!frame.contains(event.relatedTarget)) {
+      restartAutoPlay();
+    }
+  });
+
+  resetSegments();
+  slides[0].classList.add('active');
+  restartAutoPlay();
+})();
+</script>
 {% endblock %}

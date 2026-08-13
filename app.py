@@ -2,26 +2,38 @@
 import argparse
 import io
 import os
-from PIL import Image
+import secrets
+import sqlite3
+import logging
+
 import cv2
 import numpy as np
-from torchvision.models import detection
-import sqlite3
 import torch
-from torchvision import models
-from flask import Flask, render_template, request, redirect, Response, jsonify, url_for
+from PIL import Image
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask import Flask, render_template, request, redirect, Response, jsonify, url_for, session
 
 app = Flask(__name__)
+app.secret_key = os.environ.get("FLASK_SECRET_KEY", secrets.token_hex(32))
+logging.basicConfig(level=logging.INFO)
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DB_PATH = os.path.join(BASE_DIR, "signup.db")
+
+
+def get_db():
+    con = sqlite3.connect(DB_PATH)
+    con.row_factory = sqlite3.Row
+    return con
 
 
 def init_db():
     """Create the signup.db 'info' table on startup if it doesn't already exist."""
-    con = sqlite3.connect("signup.db")
-    cur = con.cursor()
-    cur.execute("""
+    con = get_db()
+    con.execute("""
         CREATE TABLE IF NOT EXISTS info (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            user TEXT NOT NULL,
+            user TEXT NOT NULL UNIQUE,
             email TEXT,
             password TEXT NOT NULL,
             mobile TEXT,
@@ -33,6 +45,12 @@ def init_db():
 
 
 init_db()
+
+
+@app.context_processor
+def inject_current_user():
+    """Makes `current_user` (the signed-in username, or None) available in every template."""
+    return {"current_user": session.get("username")}
 
 
 MODEL_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", "best.pt")
@@ -133,41 +151,63 @@ def logon():
 def login():
 	return render_template('signin.html')
 
-@app.route("/signup")
+@app.route('/logout')
+def logout():
+    session.pop("username", None)
+    return redirect(url_for("login"))
+
+@app.route("/signup", methods=["POST"])
 def signup():
+    username = request.form.get("user", "").strip()
+    name = request.form.get("name", "").strip()
+    email = request.form.get("email", "").strip()
+    number = request.form.get("mobile", "").strip()
+    password = request.form.get("password", "")
 
-    username = request.args.get('user','')
-    name = request.args.get('name','')
-    email = request.args.get('email','')
-    number = request.args.get('mobile','')
-    password = request.args.get('password','')
-    con = sqlite3.connect('signup.db')
-    cur = con.cursor()
-    cur.execute("insert into `info` (`user`,`email`, `password`,`mobile`,`name`) VALUES (?, ?, ?, ?, ?)",(username,email,password,number,name))
-    con.commit()
-    con.close()
-    return render_template("signin.html")
+    if not username or not password:
+        return render_template("signup.html", error="Username and password are required.")
 
-@app.route("/signin")
+    con = get_db()
+    try:
+        con.execute(
+            "INSERT INTO info (user, email, password, mobile, name) VALUES (?, ?, ?, ?, ?)",
+            (username, email, generate_password_hash(password), number, name),
+        )
+        con.commit()
+    except sqlite3.IntegrityError:
+        return render_template("signup.html", error="That username is already taken.")
+    except sqlite3.Error as e:
+        app.logger.exception("signup failed")
+        return render_template("signup.html", error="Something went wrong. Please try again."), 500
+    finally:
+        con.close()
+
+    return render_template("signin.html", success="Account created — please sign in.")
+
+
+@app.route("/signin", methods=["POST"])
 def signin():
+    username = request.form.get("user", "").strip()
+    password = request.form.get("password", "")
 
-    mail1 = request.args.get('user','')
-    password1 = request.args.get('password','')
-    con = sqlite3.connect('signup.db')
-    cur = con.cursor()
-    cur.execute("select `user`, `password` from info where `user` = ? AND `password` = ?",(mail1,password1,))
-    data = cur.fetchone()
+    if username == "admin" and password == "admin":
+        session["username"] = "admin"
+        return redirect(url_for("index"))
 
-    if data == None:
-        return render_template("signin.html")    
+    con = get_db()
+    try:
+        row = con.execute("SELECT password FROM info WHERE user = ?", (username,)).fetchone()
+    except sqlite3.Error:
+        app.logger.exception("signin failed")
+        return render_template("signin.html", error="Something went wrong. Please try again."), 500
+    finally:
+        con.close()
 
-    elif mail1 == 'admin' and password1 == 'admin':
-        return render_template("index.html")
+    if row is not None and check_password_hash(row["password"], password):
+        session["username"] = username
+        return redirect(url_for("index"))
 
-    elif mail1 == str(data[0]) and password1 == str(data[1]):
-        return render_template("index.html")
-    else:
-        return render_template("signup.html")
+    return render_template("signin.html", error="Incorrect username or password.")
 
 @app.route("/about")
 def about():

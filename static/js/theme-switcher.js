@@ -49,24 +49,8 @@
     document.querySelectorAll("[data-theme-btn]").forEach(function (btn) {
       btn.addEventListener("click", function () {
         setTheme(btn.getAttribute("data-theme-btn"));
-        var menu = btn.closest(".theme-menu");
-        if (menu) menu.classList.remove("open");
       });
     });
-
-    var themeToggle = document.querySelector("[data-theme-toggle]");
-    var themeMenu = document.querySelector(".theme-menu");
-    if (themeToggle && themeMenu) {
-      themeToggle.addEventListener("click", function (e) {
-        e.stopPropagation();
-        themeMenu.classList.toggle("open");
-        var langMenu = document.querySelector(".lang-menu");
-        if (langMenu) langMenu.classList.remove("open");
-      });
-      document.addEventListener("click", function () {
-        themeMenu.classList.remove("open");
-      });
-    }
 
     // reveal transition only after first paint to avoid flash-animate on load
     requestAnimationFrame(function () {

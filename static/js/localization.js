@@ -71,24 +71,8 @@
     document.querySelectorAll("[data-lang-btn]").forEach(function (btn) {
       btn.addEventListener("click", function () {
         setLang(btn.getAttribute("data-lang-btn"));
-        var menu = btn.closest(".lang-menu");
-        if (menu) menu.classList.remove("open");
       });
     });
-
-    var langToggle = document.querySelector("[data-lang-toggle]");
-    var langMenu = document.querySelector(".lang-menu");
-    if (langToggle && langMenu) {
-      langToggle.addEventListener("click", function (e) {
-        e.stopPropagation();
-        langMenu.classList.toggle("open");
-        var themeMenu = document.querySelector(".theme-menu");
-        if (themeMenu) themeMenu.classList.remove("open");
-      });
-      document.addEventListener("click", function () {
-        langMenu.classList.remove("open");
-      });
-    }
   });
 
   window.WheatI18n = { set: setLang, get: getStored, langs: LANGS };

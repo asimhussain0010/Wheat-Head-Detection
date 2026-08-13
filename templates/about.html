@@ -2,7 +2,7 @@
 {% block title %}Wheat Head Detection — About{% endblock %}
 {% block content %}
 
-<section class="section" style="padding-top:64px">
+<section class="section" style="padding-top:64px; padding-bottom:0">
   <div class="container">
     <div class="section-head" data-reveal style="max-width:720px">
       <span class="eyebrow" style="margin-bottom:14px"><span class="dot"></span><span data-i18n="about.eyebrow">About the project</span></span>
@@ -10,6 +10,16 @@
       <p data-i18n="about.desc">This project applies a YOLOv5 object detector — enhanced with separable convolutions — to identify and count wheat heads in field photography, supporting yield estimation and crop research workflows.</p>
     </div>
 
+    <div class="stat-row" data-reveal style="margin:8px 0 16px">
+      <div class="stat"><b data-i18n="stat.1_value">10K+</b><span data-i18n="stat.1_label">Training images</span></div>
+      <div class="stat"><b data-i18n="stat.2_value">0.5s</b><span data-i18n="stat.2_label">Avg. inference</span></div>
+      <div class="stat"><b data-i18n="stat.3_value">95%</b><span data-i18n="stat.3_label">mAP accuracy</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
     <div class="grid grid-3">
       <div class="card" data-reveal>
         <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17V7l8-4 8 4v10l-8 4-8-4z"/><path d="M4 7l8 4 8-4M12 11v10"/></svg></div>
@@ -27,24 +37,89 @@
         <p data-i18n="about.goal_desc">Give researchers and farmers a fast, accessible way to estimate wheat head counts from a single photo.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow" style="margin-bottom:14px"><span class="dot"></span><span data-i18n="about.arch_eyebrow">Under the hood</span></span>
+      <h2 data-i18n="about.arch_title">How the model is built</h2>
+      <p data-i18n="about.arch_desc">A standard YOLOv5 detector, modified in one deliberate place: its convolution layers.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card" data-reveal>
+        <span class="badge badge-warn" style="margin-bottom:12px">01</span>
+        <h3 data-i18n="about.arch_backbone_title">Backbone</h3>
+        <p data-i18n="about.arch_backbone_desc">A CSPDarknet-based feature extractor, with select convolutions swapped for depthwise-separable ones — splitting a standard convolution into a per-channel spatial pass and a 1×1 channel-mixing pass.</p>
+      </div>
+      <div class="card" data-reveal>
+        <span class="badge badge-warn" style="margin-bottom:12px">02</span>
+        <h3 data-i18n="about.arch_neck_title">Neck</h3>
+        <p data-i18n="about.arch_neck_desc">A PANet feature pyramid merges detail from shallow layers with context from deep layers, so both tiny distant heads and large close-up ones get picked up.</p>
+      </div>
+      <div class="card" data-reveal>
+        <span class="badge badge-warn" style="margin-bottom:12px">03</span>
+        <h3 data-i18n="about.arch_head_title">Head</h3>
+        <p data-i18n="about.arch_head_desc">Multi-scale detection heads predict bounding boxes and confidence scores directly; non-max suppression then removes duplicate, overlapping predictions.</p>
+      </div>
+    </div>
 
     <div class="card" data-reveal style="margin-top:20px; padding:34px;">
-      <h3 style="margin-top:0">Pipeline overview</h3>
+      <h3 style="margin-top:0" data-i18n="about.pipeline_title">Pipeline overview</h3>
       <div class="grid grid-2" style="margin-top:18px">
         <div>
-          <p style="color:var(--text-secondary); font-size:.92rem; line-height:1.7; margin:0">
+          <p style="color:var(--text-secondary); font-size:.92rem; line-height:1.7; margin:0" data-i18n="about.pipeline_p1">
             Field images are annotated with bounding boxes and fed into a YOLOv5 backbone modified with
             depthwise-separable convolutions to reduce parameter count. Training uses standard augmentation
             (mosaic, flip, HSV jitter) with an SGD optimizer.
           </p>
         </div>
         <div>
-          <p style="color:var(--text-secondary); font-size:.92rem; line-height:1.7; margin:0">
+          <p style="color:var(--text-secondary); font-size:.92rem; line-height:1.7; margin:0" data-i18n="about.pipeline_p2">
             At inference, an uploaded image is resized, passed through the network, and non-max suppression
             filters overlapping boxes. The rendered result overlays a bounding box on every detected wheat head.
           </p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow" style="margin-bottom:14px"><span class="dot"></span><span data-i18n="about.how_eyebrow">Using it</span></span>
+      <h2 data-i18n="about.how_title">From photo to count, in three steps</h2>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card" data-reveal>
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 16V4M12 4l-4 4M12 4l4 4"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg></div>
+        <h3 data-i18n="about.step1_title">1. Upload a field photo</h3>
+        <p data-i18n="about.step1_desc">Drag in a JPG or PNG of your wheat field — any angle, any lighting.</p>
+      </div>
+      <div class="card" data-reveal>
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg></div>
+        <h3 data-i18n="about.step2_title">2. The model runs inference</h3>
+        <p data-i18n="about.step2_desc">In well under a second, the network scans the image at multiple scales for wheat heads.</p>
+      </div>
+      <div class="card" data-reveal>
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
+        <h3 data-i18n="about.step3_title">3. Review the result</h3>
+        <p data-i18n="about.step3_desc">Every detected head is boxed and counted, ready to inform yield estimates.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="card" data-reveal style="text-align:center; padding:52px 32px; background:linear-gradient(135deg, var(--surface), var(--surface-2));">
+      <h2 style="margin:0 0 10px" data-i18n="about.cta_title">Curious how it performs on your own field photos?</h2>
+      <p style="margin:0 0 22px; color:var(--text-secondary)" data-i18n="about.cta_desc">Upload an image and see the detections for yourself.</p>
+      <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg" data-i18n="cta.button">Open Detector</a>
     </div>
   </div>
 </section>

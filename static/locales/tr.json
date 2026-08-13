@@ -2,11 +2,10 @@
   "nav.home": "Ana Sayfa",
   "nav.about": "Hakkında",
   "nav.notebook": "Not Defteri",
-  "nav.upload": "Tespit",
+  "nav.upload": "Dedektör",
   "nav.signin": "Giriş Yap",
   "nav.signup": "Kayıt Ol",
   "nav.signout": "Çıkış Yap",
-
   "hero.eyebrow": "YOLOv5 · Ayrılabilir Evrişimler",
   "hero.title1": "Buğday başaklarını",
   "hero.title2": "gerçek zamanlı ve hassas tespit edin",
@@ -19,7 +18,6 @@
   "stat.2_label": "Ort. çıkarım süresi",
   "stat.3_value": "95%",
   "stat.3_label": "mAP doğruluğu",
-
   "features.eyebrow": "Neden bu model",
   "features.title": "Gerçek tarla koşulları için tasarlandı",
   "features.desc": "Sağlam performans için çeşitli, yoğun ve kısmen örtüşen başak görüntüleriyle eğitildi.",
@@ -29,11 +27,9 @@
   "feature.2.desc": "Optimize edilmiş YOLOv5 mimarisi hızlı tahminler sunar.",
   "feature.3.title": "Yoğun Başak Sayımı",
   "feature.3.desc": "Üst üste binen ve gizlenmiş başakları işleyerek güvenilir verim tahmini sağlar.",
-
   "cta.title": "Aksiyonda görmeye hazır mısınız?",
   "cta.desc": "Bir tarla görüntüsü yükleyin ve sınırlayıcı kutularla anında başak tespiti alın.",
   "cta.button": "Dedektörü Aç",
-
   "upload.eyebrow": "Canlı Tespit",
   "upload.title": "Bir buğday tarlası görüntüsü yükleyin",
   "upload.subtitle": "JPG veya PNG, 10MB'a kadar. Model, tespit edilen her başağın etrafına kutu çizer.",
@@ -50,7 +46,6 @@
   "upload.toast_error": "Bir şeyler ters gitti. Lütfen tekrar deneyin.",
   "upload.toast_size": "Dosya çok büyük — maksimum 10MB.",
   "upload.toast_type": "Yalnızca JPG/JPEG/PNG dosyaları desteklenir.",
-
   "about.eyebrow": "Proje hakkında",
   "about.title": "Buğday Başağı Tespiti açıklandı",
   "about.desc": "Bu proje, tarla fotoğraflarında buğday başaklarını tespit edip saymak için ayrılabilir evrişimlerle geliştirilmiş bir YOLOv5 nesne dedektörü kullanır.",
@@ -60,7 +55,6 @@
   "about.data_desc": "Farklı ışık ve yoğunluk koşullarında çekilmiş binlerce etiketli tarla görüntüsüyle eğitildi.",
   "about.goal_title": "Amaç",
   "about.goal_desc": "Araştırmacılara ve çiftçilere tek bir fotoğraftan başak sayısını hızlıca tahmin etme imkânı sunmak.",
-
   "auth.signin_title": "Tekrar hoş geldiniz",
   "auth.signin_sub": "Tespit panosuna erişmek için giriş yapın",
   "auth.signup_title": "Hesabınızı oluşturun",
@@ -81,8 +75,23 @@
   "auth.have_account": "Zaten hesabınız var mı?",
   "auth.go_signup": "Kayıt olun",
   "auth.go_signin": "Giriş yapın",
-
   "footer.tagline": "Bilgisayarla görme destekli hassas tarım.",
   "footer.rights": "Tüm hakları saklıdır.",
-  "footer.made": "Buğday Başağı Tespiti"
+  "footer.made": "Buğday Başağı Tespiti",
+  "prefs.appearance": "Görünüm",
+  "prefs.language": "Dil",
+  "prefs.title": "Tercihler",
+  "prefs.theme": "Tema",
+  "prefs.light": "Açık",
+  "prefs.dark": "Koyu",
+  "prefs.system": "Sistem",
+  "nav.connect": "İletişim",
+  "connect.linkedin": "LinkedIn",
+  "connect.github": "GitHub",
+  "connect.twitter": "X (Twitter)",
+  "connect.email": "E-posta",
+  "prefs.guest": "Misafir",
+  "prefs.guest_sub": "Giriş yapılmadı",
+  "footer.tagline_short": "Buğday başağı tespiti",
+  "prefs.signed_in": "Giriş yapıldı"
 }

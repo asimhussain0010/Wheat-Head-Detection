@@ -2,11 +2,10 @@
   "nav.home": "Inicio",
   "nav.about": "Acerca de",
   "nav.notebook": "Notebook",
-  "nav.upload": "Detección",
+  "nav.upload": "Detector",
   "nav.signin": "Iniciar sesión",
   "nav.signup": "Registrarse",
   "nav.signout": "Cerrar sesión",
-
   "hero.eyebrow": "YOLOv5 · Convoluciones separables",
   "hero.title1": "Detecta espigas de trigo con",
   "hero.title2": "precisión, en tiempo real",
@@ -19,7 +18,6 @@
   "stat.2_label": "Inferencia promedio",
   "stat.3_value": "95%",
   "stat.3_label": "Precisión mAP",
-
   "features.eyebrow": "Por qué este modelo",
   "features.title": "Diseñado para condiciones reales de campo",
   "features.desc": "Entrenado con imágenes diversas, densas y parcialmente ocultas para un rendimiento robusto.",
@@ -29,11 +27,9 @@
   "feature.2.desc": "Arquitectura YOLOv5 optimizada para predicciones rápidas bajo demanda.",
   "feature.3.title": "Conteo denso de espigas",
   "feature.3.desc": "Maneja espigas superpuestas y ocultas para una estimación confiable del rendimiento.",
-
   "cta.title": "¿Listo para verlo en acción?",
   "cta.desc": "Sube una imagen de campo y obtén detección instantánea de espigas de trigo.",
   "cta.button": "Abrir detector",
-
   "upload.eyebrow": "Detección en vivo",
   "upload.title": "Sube una imagen de campo de trigo",
   "upload.subtitle": "JPG o PNG, hasta 10MB. El modelo devuelve cuadros delimitadores sobre las espigas detectadas.",
@@ -50,7 +46,6 @@
   "upload.toast_error": "Algo salió mal. Inténtalo de nuevo.",
   "upload.toast_size": "El archivo es demasiado grande — máximo 10MB.",
   "upload.toast_type": "Solo se admiten archivos JPG/JPEG/PNG.",
-
   "about.eyebrow": "Sobre el proyecto",
   "about.title": "Detección de espigas de trigo, explicada",
   "about.desc": "Este proyecto aplica un detector de objetos YOLOv5 — mejorado con convoluciones separables — para identificar y contar espigas de trigo en fotografías de campo.",
@@ -60,7 +55,6 @@
   "about.data_desc": "Entrenado con miles de imágenes anotadas capturadas en condiciones variadas de luz y densidad.",
   "about.goal_title": "Objetivo",
   "about.goal_desc": "Dar a investigadores y agricultores una forma rápida de estimar el número de espigas a partir de una sola foto.",
-
   "auth.signin_title": "Bienvenido de nuevo",
   "auth.signin_sub": "Inicia sesión para acceder al panel de detección",
   "auth.signup_title": "Crea tu cuenta",
@@ -81,8 +75,23 @@
   "auth.have_account": "¿Ya tienes cuenta?",
   "auth.go_signup": "Regístrate",
   "auth.go_signin": "Inicia sesión",
-
   "footer.tagline": "Agricultura de precisión, impulsada por visión artificial.",
   "footer.rights": "Todos los derechos reservados.",
-  "footer.made": "Wheat Head Detection"
+  "footer.made": "Wheat Head Detection",
+  "prefs.appearance": "Apariencia",
+  "prefs.language": "Idioma",
+  "prefs.title": "Preferencias",
+  "prefs.theme": "Tema",
+  "prefs.light": "Claro",
+  "prefs.dark": "Oscuro",
+  "prefs.system": "Sistema",
+  "nav.connect": "Contacto",
+  "connect.linkedin": "LinkedIn",
+  "connect.github": "GitHub",
+  "connect.twitter": "X (Twitter)",
+  "connect.email": "Correo",
+  "prefs.guest": "Invitado",
+  "prefs.guest_sub": "No conectado",
+  "footer.tagline_short": "Detección de espigas de trigo",
+  "prefs.signed_in": "Conectado"
 }

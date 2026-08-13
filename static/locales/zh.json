@@ -2,11 +2,10 @@
   "nav.home": "首页",
   "nav.about": "关于",
   "nav.notebook": "笔记本",
-  "nav.upload": "检测",
+  "nav.upload": "检测器",
   "nav.signin": "登录",
   "nav.signup": "注册",
   "nav.signout": "退出登录",
-
   "hero.eyebrow": "YOLOv5 · 可分离卷积",
   "hero.title1": "精准检测麦穗",
   "hero.title2": "实时、准确",
@@ -19,7 +18,6 @@
   "stat.2_label": "平均推理时间",
   "stat.3_value": "95%",
   "stat.3_label": "mAP 准确率",
-
   "features.eyebrow": "为什么选择此模型",
   "features.title": "专为真实田间环境打造",
   "features.desc": "基于多样、密集、部分遮挡的麦穗图像训练，实现稳健的真实场景表现。",
@@ -29,11 +27,9 @@
   "feature.2.desc": "优化的 YOLOv5 主干网络可对单张图像或实时画面进行快速预测。",
   "feature.3.title": "密集麦穗计数",
   "feature.3.desc": "可处理重叠和部分遮挡的麦穗，实现可靠的产量估算。",
-
   "cta.title": "准备好体验了吗？",
   "cta.desc": "上传田间图像，即可获得带边界框的麦穗即时检测结果。",
   "cta.button": "打开检测器",
-
   "upload.eyebrow": "实时检测",
   "upload.title": "上传一张麦田图像",
   "upload.subtitle": "支持 JPG 或 PNG，最大 10MB。模型会在检测到的每个麦穗上绘制边界框。",
@@ -50,7 +46,6 @@
   "upload.toast_error": "出了点问题，请重试。",
   "upload.toast_size": "文件过大 — 最大 10MB。",
   "upload.toast_type": "仅支持 JPG/JPEG/PNG 格式文件。",
-
   "about.eyebrow": "关于本项目",
   "about.title": "麦穗检测项目说明",
   "about.desc": "本项目使用结合了可分离卷积的 YOLOv5 目标检测器，用于识别和统计田间照片中的麦穗，支持产量估算与作物研究。",
@@ -60,7 +55,6 @@
   "about.data_desc": "基于数千张在不同光照、密度和遮挡条件下拍摄并标注的田间图像进行训练。",
   "about.goal_title": "目标",
   "about.goal_desc": "为研究人员和农民提供一种快速、便捷的方式，仅通过一张照片即可估算麦穗数量。",
-
   "auth.signin_title": "欢迎回来",
   "auth.signin_sub": "登录以访问检测面板",
   "auth.signup_title": "创建您的账户",
@@ -81,8 +75,23 @@
   "auth.have_account": "已有账户？",
   "auth.go_signup": "去注册",
   "auth.go_signin": "去登录",
-
   "footer.tagline": "由计算机视觉驱动的精准农业。",
   "footer.rights": "保留所有权利。",
-  "footer.made": "麦穗检测"
+  "footer.made": "麦穗检测",
+  "prefs.appearance": "外观",
+  "prefs.language": "语言",
+  "prefs.title": "偏好设置",
+  "prefs.theme": "主题",
+  "prefs.light": "浅色",
+  "prefs.dark": "深色",
+  "prefs.system": "跟随系统",
+  "nav.connect": "联系方式",
+  "connect.linkedin": "领英",
+  "connect.github": "GitHub",
+  "connect.twitter": "X（推特）",
+  "connect.email": "电子邮箱",
+  "prefs.guest": "访客",
+  "prefs.guest_sub": "未登录",
+  "footer.tagline_short": "麦穗检测",
+  "prefs.signed_in": "已登录"
 }

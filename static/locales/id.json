@@ -2,11 +2,10 @@
   "nav.home": "Beranda",
   "nav.about": "Tentang",
   "nav.notebook": "Notebook",
-  "nav.upload": "Deteksi",
+  "nav.upload": "Detektor",
   "nav.signin": "Masuk",
   "nav.signup": "Daftar",
   "nav.signout": "Keluar",
-
   "hero.eyebrow": "YOLOv5 · Konvolusi Terpisah",
   "hero.title1": "Deteksi bulir gandum dengan",
   "hero.title2": "presisi, secara real-time",
@@ -19,7 +18,6 @@
   "stat.2_label": "Rata-rata inferensi",
   "stat.3_value": "95%",
   "stat.3_label": "Akurasi mAP",
-
   "features.eyebrow": "Mengapa model ini",
   "features.title": "Dibangun untuk kondisi lahan nyata",
   "features.desc": "Dilatih dengan gambar bulir gandum yang beragam, padat, dan sebagian tertutup untuk performa yang andal.",
@@ -29,11 +27,9 @@
   "feature.2.desc": "Arsitektur YOLOv5 yang dioptimalkan memberikan prediksi cepat sesuai permintaan.",
   "feature.3.title": "Penghitungan Bulir Padat",
   "feature.3.desc": "Menangani bulir yang tumpang tindih dan tertutup untuk estimasi hasil panen yang andal.",
-
   "cta.title": "Siap melihatnya beraksi?",
   "cta.desc": "Unggah gambar lahan dan dapatkan deteksi bulir gandum instan dengan kotak pembatas.",
   "cta.button": "Buka Detektor",
-
   "upload.eyebrow": "Deteksi Langsung",
   "upload.title": "Unggah gambar lahan gandum",
   "upload.subtitle": "JPG atau PNG, hingga 10MB. Model menampilkan kotak pembatas pada setiap bulir yang terdeteksi.",
@@ -50,7 +46,6 @@
   "upload.toast_error": "Terjadi kesalahan. Silakan coba lagi.",
   "upload.toast_size": "Ukuran file terlalu besar — maksimum 10MB.",
   "upload.toast_type": "Hanya file JPG/JPEG/PNG yang didukung.",
-
   "about.eyebrow": "Tentang proyek",
   "about.title": "Deteksi Bulir Gandum, dijelaskan",
   "about.desc": "Proyek ini menerapkan detektor objek YOLOv5 — ditingkatkan dengan konvolusi terpisah — untuk mengidentifikasi dan menghitung bulir gandum dalam foto lahan.",
@@ -60,7 +55,6 @@
   "about.data_desc": "Dilatih dengan ribuan gambar lahan beranotasi yang diambil dalam berbagai kondisi cahaya dan kepadatan.",
   "about.goal_title": "Tujuan",
   "about.goal_desc": "Memberi peneliti dan petani cara cepat untuk memperkirakan jumlah bulir gandum hanya dari satu foto.",
-
   "auth.signin_title": "Selamat datang kembali",
   "auth.signin_sub": "Masuk untuk mengakses dasbor deteksi",
   "auth.signup_title": "Buat akun Anda",
@@ -81,8 +75,23 @@
   "auth.have_account": "Sudah punya akun?",
   "auth.go_signup": "Daftar",
   "auth.go_signin": "Masuk",
-
   "footer.tagline": "Pertanian presisi, didukung oleh computer vision.",
   "footer.rights": "Hak cipta dilindungi.",
-  "footer.made": "Deteksi Bulir Gandum"
+  "footer.made": "Deteksi Bulir Gandum",
+  "prefs.appearance": "Tampilan",
+  "prefs.language": "Bahasa",
+  "prefs.title": "Preferensi",
+  "prefs.theme": "Tema",
+  "prefs.light": "Terang",
+  "prefs.dark": "Gelap",
+  "prefs.system": "Sistem",
+  "nav.connect": "Terhubung",
+  "connect.linkedin": "LinkedIn",
+  "connect.github": "GitHub",
+  "connect.twitter": "X (Twitter)",
+  "connect.email": "Email",
+  "prefs.guest": "Tamu",
+  "prefs.guest_sub": "Belum masuk",
+  "footer.tagline_short": "Deteksi bulir gandum",
+  "prefs.signed_in": "Sudah masuk"
 }

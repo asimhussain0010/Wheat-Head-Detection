@@ -2,11 +2,10 @@
   "nav.home": "Startseite",
   "nav.about": "Über uns",
   "nav.notebook": "Notebook",
-  "nav.upload": "Erkennung",
+  "nav.upload": "Detektor",
   "nav.signin": "Anmelden",
   "nav.signup": "Registrieren",
   "nav.signout": "Abmelden",
-
   "hero.eyebrow": "YOLOv5 · Separable Convolutions",
   "hero.title1": "Weizenähren erkennen —",
   "hero.title2": "präzise, in Echtzeit",
@@ -19,7 +18,6 @@
   "stat.2_label": "Ø Inferenzzeit",
   "stat.3_value": "95%",
   "stat.3_label": "mAP-Genauigkeit",
-
   "features.eyebrow": "Warum dieses Modell",
   "features.title": "Für reale Feldbedingungen entwickelt",
   "features.desc": "Trainiert mit vielfältigen, dichten und teilweise verdeckten Ährenbildern für robuste Praxisleistung.",
@@ -29,11 +27,9 @@
   "feature.2.desc": "Optimiertes YOLOv5-Backbone liefert schnelle Vorhersagen auf Abruf.",
   "feature.3.title": "Dichte Ährenzählung",
   "feature.3.desc": "Erkennt überlappende und verdeckte Ähren für zuverlässige Ertragsschätzung.",
-
   "cta.title": "Bereit, es in Aktion zu sehen?",
   "cta.desc": "Lade ein Feldbild hoch und erhalte sofort Ährenerkennungen mit Begrenzungsrahmen.",
   "cta.button": "Detektor öffnen",
-
   "upload.eyebrow": "Live-Erkennung",
   "upload.title": "Weizenfeldbild hochladen",
   "upload.subtitle": "JPG oder PNG, bis zu 10 MB. Das Modell liefert Begrenzungsrahmen um jede erkannte Ähre.",
@@ -50,7 +46,6 @@
   "upload.toast_error": "Etwas ist schiefgelaufen. Bitte erneut versuchen.",
   "upload.toast_size": "Datei zu groß — maximal 10 MB.",
   "upload.toast_type": "Nur JPG/JPEG/PNG-Dateien werden unterstützt.",
-
   "about.eyebrow": "Über das Projekt",
   "about.title": "Weizenährenerkennung erklärt",
   "about.desc": "Dieses Projekt nutzt einen YOLOv5-Objektdetektor mit separierbaren Convolutions zur Identifizierung und Zählung von Weizenähren auf Feldfotos.",
@@ -60,7 +55,6 @@
   "about.data_desc": "Trainiert mit tausenden annotierten Feldbildern unter verschiedenen Licht- und Dichteverhältnissen.",
   "about.goal_title": "Ziel",
   "about.goal_desc": "Forschern und Landwirten eine schnelle Möglichkeit bieten, die Ährenzahl aus einem einzigen Foto zu schätzen.",
-
   "auth.signin_title": "Willkommen zurück",
   "auth.signin_sub": "Melde dich an, um auf das Dashboard zuzugreifen",
   "auth.signup_title": "Konto erstellen",
@@ -81,8 +75,23 @@
   "auth.have_account": "Bereits ein Konto?",
   "auth.go_signup": "Registrieren",
   "auth.go_signin": "Anmelden",
-
   "footer.tagline": "Präzisionslandwirtschaft, unterstützt durch Computer Vision.",
   "footer.rights": "Alle Rechte vorbehalten.",
-  "footer.made": "Wheat Head Detection"
+  "footer.made": "Wheat Head Detection",
+  "prefs.appearance": "Erscheinungsbild",
+  "prefs.language": "Sprache",
+  "prefs.title": "Einstellungen",
+  "prefs.theme": "Design",
+  "prefs.light": "Hell",
+  "prefs.dark": "Dunkel",
+  "prefs.system": "System",
+  "nav.connect": "Kontakt",
+  "connect.linkedin": "LinkedIn",
+  "connect.github": "GitHub",
+  "connect.twitter": "X (Twitter)",
+  "connect.email": "E-Mail",
+  "prefs.guest": "Gast",
+  "prefs.guest_sub": "Nicht angemeldet",
+  "footer.tagline_short": "Weizenährenerkennung",
+  "prefs.signed_in": "Angemeldet"
 }
