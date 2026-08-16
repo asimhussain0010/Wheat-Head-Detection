@@ -18,9 +18,13 @@ The repository includes the full stack: model inference, training code and datas
 
 ## Screenshots
 
-| Home | Detection | Result |
-|---|---|---|
-| ![Home](docs/demo/Home.gif) | ![Detection](docs/demo/Detecor.gif) | ![Result](docs/images/result.png) |
+| **Home** |
+|---|
+| ![Home](docs/demo/Home.gif) |
+
+| **Detection** |
+|---|
+| ![Detection](docs/demo/Detector.gif) |
 
 ## Features
 
@@ -31,14 +35,17 @@ The repository includes the full stack: model inference, training code and datas
 
 ## Architecture
 
-```mermaid
-flowchart TD
-    A[User uploads image] --> B[Flask app — app.py]
-    B --> C[Image preprocessing — PIL / OpenCV]
-    C --> D[YOLOv5 inference — best.pt]
-    D --> E[Bounding boxes + confidence scores]
-    E --> F[Rendered results in web UI]
-```
+<p align="center">
+  <img src="docs/architecture.svg" alt="WheatHead system architecture with request and response flow" width="640"/>
+</p>
+
+Solid arrows show the request path; dashed arrows show the response path — every tier is a round trip. Adapts automatically to light and dark mode.
+
+| Step | Request → | ← Response |
+|---|---|---|
+| User ↔ Frontend | Login / upload | Session / result |
+| Frontend ↔ Backend | Image data | Annotated image |
+| Backend ↔ Detection engine | Run inference | Boxes + confidence |
 
 ## Sample Output
 
