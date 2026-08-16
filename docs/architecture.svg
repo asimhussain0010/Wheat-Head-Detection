@@ -1,0 +1,139 @@
+<svg width="680" height="730" viewBox="0 0 680 730" xmlns="http://www.w3.org/2000/svg" role="img" font-family="Helvetica, Arial, sans-serif">
+<title>WheatHead system architecture with request and response flow</title>
+<desc>User interacts with a frontend, which sends images to a backend containing an API layer and SQLite3 store, which runs inference through a YOLOv5 detection engine using a best.pt checkpoint. Each tier shows both the outbound request and the inbound response.</desc>
+
+<style>
+.bg{fill:#ffffff}
+.userbox{fill:#F1EFE8;stroke:#5F5E5A}
+.usertext{fill:#2C2C2A}
+.frontendbox{fill:#E6F1FB;stroke:#185FA5}
+.frontendtitle{fill:#0C447C}
+.frontendsub{fill:#185FA5}
+.backendbox{fill:#FAECE7;stroke:#993C1D}
+.backendtitle{fill:#712B13}
+.backendsub{fill:#993C1D}
+.apibox{fill:#F1EFE8;stroke:#5F5E5A}
+.apititle{fill:#2C2C2A}
+.apisub{fill:#5F5E5A}
+.dbbox{fill:#E1F5EE;stroke:#0F6E56}
+.dbtitle{fill:#085041}
+.dbsub{fill:#0F6E56}
+.detectionbox{fill:#EEEDFE;stroke:#534AB7}
+.detectiontitle{fill:#3C3489}
+.detectionsub{fill:#534AB7}
+.modelbox{fill:#E1F5EE;stroke:#0F6E56}
+.modeltitle{fill:#085041}
+.reqarrow{stroke:#5f5e5a}
+.resparrow{stroke:#378ADD}
+.reqarrowhead{stroke:#5f5e5a}
+.resparrowhead{stroke:#378ADD}
+.reqlabel{fill:#5F5E5A}
+.resplabel{fill:#185FA5}
+.legendtext{fill:#5F5E5A}
+.legendreq{fill:none;stroke:#5F5E5A}
+.legendresp{stroke:#378ADD}
+
+@media (prefers-color-scheme: dark) {
+.bg{fill:#0d1117}
+.userbox{fill:#30363d;stroke:#8b949e}
+.usertext{fill:#e6edf3}
+.frontendbox{fill:#0c2d48;stroke:#58a6ff}
+.frontendtitle{fill:#cae8ff}
+.frontendsub{fill:#79c0ff}
+.backendbox{fill:#4a2419;stroke:#ffa07a}
+.backendtitle{fill:#ffe0d1}
+.backendsub{fill:#ffb38a}
+.apibox{fill:#30363d;stroke:#8b949e}
+.apititle{fill:#e6edf3}
+.apisub{fill:#c9d1d9}
+.dbbox{fill:#0d3b2e;stroke:#56d4a3}
+.dbtitle{fill:#d3f7e8}
+.dbsub{fill:#7ee8bf}
+.detectionbox{fill:#2d2854;stroke:#a5a0f0}
+.detectiontitle{fill:#e3e1fb}
+.detectionsub{fill:#c3bff5}
+.modelbox{fill:#0d3b2e;stroke:#56d4a3}
+.modeltitle{fill:#d3f7e8}
+.reqarrow{stroke:#8b949e}
+.resparrow{stroke:#79c0ff}
+.reqarrowhead{stroke:#8b949e}
+.resparrowhead{stroke:#79c0ff}
+.reqlabel{fill:#c9d1d9}
+.resplabel{fill:#79c0ff}
+.legendtext{fill:#c9d1d9}
+.legendreq{stroke:#8b949e}
+.legendresp{stroke:#79c0ff}
+}
+</style>
+
+<defs>
+<marker id="arrowDown" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path class="reqarrowhead" d="M2 1L8 5L2 9" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+<marker id="arrowUp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path class="resparrowhead" d="M2 1L8 5L2 9" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
+
+<rect class="bg" x="0" y="0" width="680" height="730"/>
+
+<!-- User -->
+<rect class="userbox" x="280" y="40" width="120" height="40" rx="8" stroke-width="0.5"/>
+<text class="usertext" x="340" y="65" text-anchor="middle" font-size="14" font-weight="500">User</text>
+
+<!-- Gap 1: User <-> Frontend -->
+<line class="reqarrow" x1="150" y1="80" x2="150" y2="150" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+<text class="reqlabel" x="170" y="119" font-size="12">Login / upload</text>
+<line class="resparrow" x1="530" y1="150" x2="530" y2="80" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrowUp)"/>
+<text class="resplabel" x="510" y="119" text-anchor="end" font-size="12">Session / result</text>
+
+<!-- Frontend -->
+<rect class="frontendbox" x="110" y="150" width="460" height="80" rx="20" stroke-width="0.5"/>
+<text class="frontendtitle" x="134" y="181" font-size="14" font-weight="500">Frontend</text>
+<text class="frontendsub" x="134" y="201" font-size="12">HTML · CSS · Bootstrap 4</text>
+
+<!-- Gap 2: Frontend <-> Backend -->
+<line class="reqarrow" x1="150" y1="230" x2="150" y2="300" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+<text class="reqlabel" x="170" y="269" font-size="12">Image data</text>
+<line class="resparrow" x1="530" y1="300" x2="530" y2="230" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrowUp)"/>
+<text class="resplabel" x="510" y="269" text-anchor="end" font-size="12">Annotated image</text>
+
+<!-- Backend -->
+<rect class="backendbox" x="110" y="300" width="460" height="160" rx="20" stroke-width="0.5"/>
+<text class="backendtitle" x="134" y="331" font-size="14" font-weight="500">Backend</text>
+<text class="backendsub" x="134" y="351" font-size="12">Anaconda · Python</text>
+
+<rect class="apibox" x="134" y="374" width="210" height="56" rx="12" stroke-width="0.5"/>
+<text class="apititle" x="239" y="399" text-anchor="middle" font-size="14" font-weight="500">API layer</text>
+<text class="apisub" x="239" y="419" text-anchor="middle" font-size="12">Image in / result out</text>
+
+<rect class="dbbox" x="380" y="374" width="170" height="56" rx="12" stroke-width="0.5"/>
+<text class="dbtitle" x="465" y="399" text-anchor="middle" font-size="14" font-weight="500">SQLite3</text>
+<text class="dbsub" x="465" y="419" text-anchor="middle" font-size="12">Sessions &amp; data</text>
+
+<!-- Gap 3: Backend <-> Detection engine -->
+<line class="reqarrow" x1="150" y1="460" x2="150" y2="530" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+<text class="reqlabel" x="170" y="499" font-size="12">Run inference</text>
+<line class="resparrow" x1="530" y1="530" x2="530" y2="460" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrowUp)"/>
+<text class="resplabel" x="510" y="499" text-anchor="end" font-size="12">Boxes + confidence</text>
+
+<!-- Detection engine -->
+<rect class="detectionbox" x="110" y="530" width="460" height="140" rx="20" stroke-width="0.5"/>
+<text class="detectiontitle" x="134" y="561" font-size="14" font-weight="500">Detection engine</text>
+<text class="detectionsub" x="134" y="581" font-size="12">YOLOv5 · PyTorch</text>
+
+<rect class="modelbox" x="255" y="604" width="170" height="44" rx="10" stroke-width="0.5"/>
+<text class="modeltitle" x="340" y="631" text-anchor="middle" font-size="14" font-weight="500">best.pt</text>
+
+<!-- Legend -->
+<line class="legendreq" x1="92" y1="696" x2="108" y2="696" stroke-width="1.5"/>
+<text class="legendtext" x="114" y="700" font-size="12">Request</text>
+<line class="legendresp" x1="210" y1="696" x2="226" y2="696" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text class="legendtext" x="232" y="700" font-size="12">Response</text>
+<rect class="frontendbox" x="330" y="690" width="12" height="12" rx="3" stroke-width="0.5"/>
+<text class="legendtext" x="348" y="700" font-size="12">Frontend</text>
+<rect class="backendbox" x="430" y="690" width="12" height="12" rx="3" stroke-width="0.5"/>
+<text class="legendtext" x="448" y="700" font-size="12">Backend</text>
+<rect class="detectionbox" x="530" y="690" width="12" height="12" rx="3" stroke-width="0.5"/>
+<text class="legendtext" x="548" y="700" font-size="12">Detection</text>
+</svg>
