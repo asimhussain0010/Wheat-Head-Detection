@@ -33,6 +33,18 @@ The repository includes the full stack: model inference, training code and datas
 - **Trained checkpoint included** (`best.pt`) — ready for inference out of the box
 - **Training pipeline** — retrain or fine-tune on your own dataset via `train.py`
 
+
+## Models
+
+The trained model files are hosted separately on Hugging Face due to their large size.
+
+**Hugging Face:** https://huggingface.co/asimhussain01/Wheat-Head-Detection-Models
+
+Download the models using the Hugging Face CLI:
+
+```bash
+hf download asimhussain01/Wheat-Head-Detection-Models --local-dir ./models
+```
 ## Architecture
 
 <p align="center">
